@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.ahk": "ahk",
-        "datatypes.h": "c"
+        "datatypes.h": "c",
+        "stdlib.h": "c"
     }
 }
