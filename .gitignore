@@ -1,1 +1,10 @@
 Lab3.zip
+mnist_env/*
+mnist_env
+
+*.data
+*.zip
+*.tflite
+*.h5
+*.pb
+*.index

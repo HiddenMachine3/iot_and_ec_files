@@ -99,7 +99,7 @@ void inferenceTask(void * parameter) {
 
 // Inference related variables
 float x_val;
-Y_VALUES y_vals;
+Y_VALUES sine_y_vals;
 float input[1];
 
 void inferenceEngine(void) {
@@ -111,10 +111,10 @@ void inferenceEngine(void) {
     x_val = position * kXrange;
     input[0] = x_val;
     
-    y_vals.y_actual = sin(x_val);
+    sine_y_vals.y_actual = sin(x_val);
 
     startTime = micros();
-    y_vals.y_pred = ml.predict(input);
+    sine_y_vals.y_pred = ml.predict(input);
     timeIt = micros() - startTime;
 
 #ifndef PLOT
@@ -124,10 +124,10 @@ void inferenceEngine(void) {
 #endif
      
     // Enlarge the value so that the plot is enhanced on the Serial Plotter
-    y_vals.y_actual *= 3;
-    y_vals.y_pred *= 3;
+    sine_y_vals.y_actual *= 3;
+    sine_y_vals.y_pred *= 3;
     
-    bool res =  xQueueSend(xQHandle, &y_vals, pdMS_TO_TICKS(2000));
+    bool res =  xQueueSend(xQHandle, &sine_y_vals, pdMS_TO_TICKS(2000));
     if (!res) {
       printf("MsgQ: Failed to send an item.\n");
     }

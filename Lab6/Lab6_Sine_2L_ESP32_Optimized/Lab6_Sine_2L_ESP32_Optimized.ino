@@ -83,7 +83,7 @@ void inferenceTask(void *parameter) {
 
 // Inference related variables
 float x_val;
-Y_VALUES y_vals;
+Y_VALUES sine_y_vals;
 
 void inferenceEngine(void) {
 
@@ -91,17 +91,17 @@ void inferenceEngine(void) {
   float position = static_cast<float>(inference_count) / static_cast<float>(kInferencesPerCycle);
   x_val = position * kXrange;
 
-  y_vals.y_actual = sin(x_val);
+  sine_y_vals.y_actual = sin(x_val);
 
 
-  y_vals.y_pred = predict(x_val);
+  sine_y_vals.y_pred = predict(x_val);
 
 
   // Enlarge the value so that the plot is enhanced on the Serial Plotter
-  y_vals.y_actual *= 3;
-  y_vals.y_pred *= 3;
+  sine_y_vals.y_actual *= 3;
+  sine_y_vals.y_pred *= 3;
 
-  bool res = xQueueSend(xQHandle, &y_vals, pdMS_TO_TICKS(0));
+  bool res = xQueueSend(xQHandle, &sine_y_vals, pdMS_TO_TICKS(0));
   if (!res) {
     printf("MsgQ: Failed to send an item.\n");
   }
