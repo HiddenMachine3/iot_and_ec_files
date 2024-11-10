@@ -72,7 +72,7 @@ void setup() {
             (void *)&MQTT_TaskParam,  /* Parameter passed as input of the task */
             2,                        /* Priority of the task. */
             &MQTT_TaskHandle,         /* Task handle. */
-            1);                       /* Should always run on Core 0, which is a Protocol Core */
+            0);                       /* Should always run on Core 0, which is a Protocol Core */
   
 } // End of setup()
 
