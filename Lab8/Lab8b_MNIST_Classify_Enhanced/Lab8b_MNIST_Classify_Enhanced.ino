@@ -18,7 +18,7 @@
 // When you notice that the output values of the TFLite model are all zero, you should suspect that Arena size given is not enough
 #define TENSOR_ARENA_SIZE 6*1024  // Since the size of TFLite model is around 104704 half of that is given as Arena size
 
-Eloquent::TinyML::TfLite<NUMBER_OF_INPUTS, NUMBER_OF_OUTPUTS, TENSOR_ARENA_SIZE> ml;
+Eloquent::TinyML::TfLite<NUMBER_OF_INPUTS, NUMBER_OF_OUTPUT_FEATURES, TENSOR_ARENA_SIZE> ml;
 
 void setup() {
     Serial.begin(115200);
@@ -26,7 +26,7 @@ void setup() {
     ml.begin(MNIST_model_esp32_new);
 }
 
-float y_pred[NUMBER_OF_OUTPUTS] = {0};
+float y_pred[NUMBER_OF_OUTPUT_FEATURES] = {0};
 float fRes = NULL;
 int y_test0 = 7;
 int y_train0 = 5;
@@ -88,14 +88,14 @@ void loop() {
 
 void initfResult(float *fResult){
   
-    for(int i = 0; i < NUMBER_OF_OUTPUTS; i++){
+    for(int i = 0; i < NUMBER_OF_OUTPUT_FEATURES; i++){
        fResult[i] = 0.0f;
     }
 } // end of displayOutput()
 
 void displayOutput(float *fResult){
   
-    for(int i = 0; i < NUMBER_OF_OUTPUTS; i++){
+    for(int i = 0; i < NUMBER_OF_OUTPUT_FEATURES; i++){
         Serial.print(fResult[i]);
         Serial.print(" ");
     }
@@ -105,7 +105,7 @@ int getMaxIndex(float *valArr){
     byte maxIndex = 0;
     float maxValue = valArr[maxIndex];
     
-    for(byte i = 1; i < NUMBER_OF_OUTPUTS; i++)
+    for(byte i = 1; i < NUMBER_OF_OUTPUT_FEATURES; i++)
     {
         if(valArr[i] > maxValue) {
             maxValue = valArr[i];

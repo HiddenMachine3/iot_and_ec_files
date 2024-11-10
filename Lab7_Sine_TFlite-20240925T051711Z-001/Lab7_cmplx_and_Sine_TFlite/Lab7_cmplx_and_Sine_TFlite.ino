@@ -15,8 +15,8 @@
 #define NUMBER_OF_INPUTS 1
 #define NUMBER_OF_OUTPUTS 1 
 
-Eloquent::TinyML::TfLite<NUMBER_OF_INPUTS, NUMBER_OF_OUTPUTS, SINE_TENSOR_ARENA_SIZE> mSine;
-Eloquent::TinyML::TfLite<NUMBER_OF_INPUTS, NUMBER_OF_OUTPUTS, CF_TENSOR_ARENA_SIZE> mCF;
+Eloquent::TinyML::TfLite<NUMBER_OF_INPUTS, NUMBER_OF_OUTPUT_FEATURES, SINE_TENSOR_ARENA_SIZE> mSine;
+Eloquent::TinyML::TfLite<NUMBER_OF_INPUTS, NUMBER_OF_OUTPUT_FEATURES, CF_TENSOR_ARENA_SIZE> mCF;
 
 // You can keep reducing the stack size to see where it fails but never set it to just above lower limit you find
 // You can keep twice the size of minimum you find in case if you can fit in

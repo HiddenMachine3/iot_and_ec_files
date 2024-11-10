@@ -10,7 +10,7 @@
 #define NUMBER_OF_INPUTS 1
 #define NUMBER_OF_OUTPUTS 1
 
-Eloquent::TinyML::TfLite<NUMBER_OF_INPUTS, NUMBER_OF_OUTPUTS, TENSOR_ARENA_SIZE> ml;
+Eloquent::TinyML::TfLite<NUMBER_OF_INPUTS, NUMBER_OF_OUTPUT_FEATURES, TENSOR_ARENA_SIZE> ml;
 
 // You can keep reducing the stack size to see where it fails but never set it to just above lower limit you find
 #define PLOT_TASK_STACK_SIZE      5000  // Currently it fails when the size is set to 500
