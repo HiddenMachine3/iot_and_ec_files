@@ -29,8 +29,7 @@ void setup() {
 
 float y_pred[NUMBER_OF_OUTPUTS] = {0};
 float fRes = NULL;
-// int y_test0 = 7;
-// int y_train0 = 5;
+
 
 void loop() {
     uint32_t startTime;
