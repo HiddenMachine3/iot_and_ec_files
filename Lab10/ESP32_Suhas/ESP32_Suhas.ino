@@ -3,12 +3,12 @@
 
 // Wi-Fi credentials
 const char* ssid = "star platinum";
-const char* password = "";
+const char* password = "wifi_splash";
 
 // ThingSpeak settings
 const char* server = "http://api.thingspeak.com";
-const char* readApiKey ="";   // Replace with your ThingSpeak Read API Key
-const int channelID = 2738548;                 // Replace with your ThingSpeak Channel ID
+const char* readApiKey ="EDA5TZJCU6BV2ZM4";   // Replace with your ThingSpeak Read API Key
+const int channelID = 2745971;                 // Replace with your ThingSpeak Channel ID
 
 // LED pin (built-in LED on ESP32, GPIO2)
 const int ledPin = 2;
