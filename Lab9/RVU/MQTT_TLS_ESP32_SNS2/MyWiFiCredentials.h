@@ -11,6 +11,6 @@
 /* change it with your ssid-password */
 const char *wifi_ssid = "amos";
 
-const char *wifi_password = "jsi+#)/29hdgs+)hssuj+@)/*:'!!'jebbdjdub";
+const char *wifi_password = "maanyapass" // "jsi+#)/29hdgs+)hssuj+@)/*:'!!'jebbdjdub";
 
 #endif // MYWIFICREDENTIALS_H
